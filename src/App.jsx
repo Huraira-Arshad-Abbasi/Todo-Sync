@@ -6,13 +6,17 @@ import TodoApp from './components/TodoApp';
 
 function App() {
     const { isAuthenticated, loading } = useContext(AuthContext);
-
-    if (loading) {
+        if (loading) {
         return <div>Loading...</div>;
     }
-
     return (
         <div>
+            {/* <>
+            <TodoApp />
+            if (!isAuthenticated) {
+                <Login/>
+            }
+            </> */}
             {isAuthenticated ? (
                 <>
                     <TodoApp />
