@@ -10,7 +10,8 @@ button {
     position: relative;
     margin: 0 auto;
     overflow-x: hidden;
-    background: #c2d8a9;
+    /* background: #c2d8a9;
+    background: #1a1515; */
 }
 
 nav {
@@ -223,6 +224,7 @@ nav>h2 {
     /* border: 1px solid #2f2c4e; */
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.323);
     justify-content: space-between;
+    
     transition: 1s;
 
 }
@@ -236,10 +238,10 @@ nav>h2 {
 }
 
 .todo__card__content>h4 {
-    font-weight: 900;
     font-size: 1.2rem;
     text-align: center;
-    color: #79ed2b;
+    color: #35d77b;
+    color: #80e7ad;
 }
 .todo__card__content > hr {
     width: 100%;
@@ -251,21 +253,26 @@ nav>h2 {
     max-width: 100%;
     text-wrap: wrap;
     font-size: 1rem;
-    margin: 0 1rem;
-    font-weight: 900;
-    color: #ffffffc5;
+    font-weight: 500;
+    margin: 1rem;
+    color: #98f5c1;
+    color: #f0fdf5;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .todo__card__btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 2px solid #1acbf3;
+    border-top: 1px solid #98f5c1;
     background: #eae9fdf8;
+    background: #e8f9e23d;
 }
 
 .todo__card__btn>button {
     border: none;
+    background: #35d77b00;
+    color: #80e7ad;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.323);
     border-radius: .5rem;
     padding: .5rem 1rem;
