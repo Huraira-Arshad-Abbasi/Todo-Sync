@@ -1,19 +1,19 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { Todo } from './user.js';
+import { Todo } from './todo.js';
 
-const app = express();
-app.use(cors()); // To allow cross-origin requests from React frontend
-app.use(bodyParser.json()); // To parse JSON request bodies
+const router = express();
+router.use(cors()); // To allow cross-origin requests from React frontend
+router.use(bodyParser.json()); // To parse JSON request bodies
 
 // Test route
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.send('Server is running');
 });
 
 // Route to create a todo
-app.post('/api/todos', async (req, res) => {
+router.post('/api/todos', async (req, res) => {
     try {
         const todo = await Todo.create(req.body);
         res.status(201).json(todo);
@@ -23,7 +23,7 @@ app.post('/api/todos', async (req, res) => {
 }); 
 
 // Route to get all todos
-app.get('/api/todos', async (req, res) => {
+router.get('/api/todos', async (req, res) => {
     try {
         const todos = await Todo.find();
         res.status(200).json(todos);
@@ -31,13 +31,14 @@ app.get('/api/todos', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+
 // Route to delete a specific todo
-app.delete('/api/todos/:index', async (req, res) => {
+router.delete('/api/todos/:index', async (req, res) => {
     try {
         const todos = await Todo.find();
         const reverseTodo = todos.slice().reverse()
         const {index} = req.params;
-        const todoToDelete = reverseTodo[index]
+        const todoToDelete = reverseTodo[index];
         const newTodos = await Todo.findByIdAndDelete(todoToDelete._id)
         
         if (!newTodos) {
@@ -49,6 +50,6 @@ app.delete('/api/todos/:index', async (req, res) => {
 });
 
 
-app.listen(3000, () => {
+router.listen(3000, () => {
     console.log('Server running on port 3000');
 });

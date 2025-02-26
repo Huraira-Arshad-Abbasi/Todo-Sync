@@ -1,14 +1,11 @@
 import mongoose from "mongoose";
-mongoose.connect('mongodb://127.0.0.1:27017/Todos')
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error('Database connection error:', err.message));
+// mongoose.connect(`mongodb://127.0.0.1:27017/Todos`)
+//   .then(() => console.log('MongoDB connected'))
+//   .catch(err => console.error('Database connection error:', err.message));
 
-let todoSchema = mongoose.Schema({
-    title: {type : String},
-    disc: {type : String},
-    date: {type : Date, set: function(value) {
-        return value || Date.now();  // Set current date if the value is null
-      }}
-}) 
+const UserSchema = new mongoose.Schema({
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true }
+});
 
- export const Todo =  mongoose.model('Todo', todoSchema);
+export const User = mongoose.model('User', UserSchema);

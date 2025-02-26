@@ -1,7 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 :root{
     background-color: #F5F5F5;
-    overflow-x: hidden;
+    max-width: 1280px;
+    margin: 0 auto;
+    /* overflow-x: hidden; */
+    padding: 0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
 }

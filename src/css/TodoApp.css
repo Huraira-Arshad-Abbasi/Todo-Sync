@@ -1,17 +1,25 @@
-.main {
-    width: 1280px;
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: .5s;
+}
+.main__div {
+    max-width: 100%;
     min-height: 100vh;
     position: relative;
     margin: 0 auto;
     overflow-x: hidden;
+    background: #c2d8a9;
 }
 
 nav {
-    width: 1280px;
+    max-width: 100%;
     margin: 0 auto;
     height: 12vh;
     display: flex;
-    background: #4fa2d9;
+    /* background: #4fa2d9; */
+    background: #3a1b32;
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
@@ -53,16 +61,17 @@ nav>h2 {
     justify-content: center;
     align-items: center;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.323);
-    border-radius: 4rem;
+    border-radius: .5rem;
     color: rgba(0, 0, 0, 0.64);
-    width: 5vw;
-    transition: .2s;
+    width: 3vw;
     font-size: 2vw;
     font-weight: 600;
     margin: 0 2rem;
+    transition: .5s;
 }
 
 .add__btn>button:hover {
+    cursor: pointer;
     background: #373561;
     color: rgb(255, 255, 255);
 }
@@ -74,27 +83,34 @@ nav>h2 {
     color: rgba(18, 1, 1, 0.46);
 }
 
+/* add todo popup */
 .add__todo__popup {
     position: absolute;
     top: 30%;
     left: 8vw;
     min-width: 35vh;
     min-height: 50vh;
-    box-sizing: border-box;
     background: #ffffff;
     color: #000;
-    border: 1px solid;
     border-radius: 1rem;
-    /* overflow: hidden; */
-    display: flex;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.323);
     flex-direction: column;
     justify-content: space-between;
     display: none;
     z-index: 10;
 }
+.none{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+
 
 .add__todo__content {
     overflow: hidden;
+    padding: .5rem;
+    
 }
 
 .add__todo__content>textarea {
@@ -103,6 +119,13 @@ nav>h2 {
     background: transparent;
     outline: none;
     resize: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+}
+.add__todo__content > hr {
+    width: 100%;
+    background: #0a011cc5;
+    height: 1px;
 }
 
 .add__todo__content>textarea::-webkit-scrollbar {
@@ -126,6 +149,7 @@ nav>h2 {
 
 .add__todo__btn>button {
     padding: 10px 20px;
+    /* border: none; */
     border-radius: 1rem;
     margin: .5rem;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.323);
@@ -137,55 +161,67 @@ nav>h2 {
     background-color: #4fa2d9;
 }
 
-.DT__btn{
+.DT__btn {
     background-color: #4fa2d9;
     box-sizing: border-box;
 }
+
 /* reminder */
-.reminderPopUp {
+.DateTimePopUp {
     display: none;
     width: 0;
 }
-.reminder {
+
+.DateTime {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     /* background: rgb(26, 203, 243); */
-    border: 1px solid rgb(0, 0, 0);
+    border: 2px solid rgb(116, 192, 250);
     border-radius: .5rem;
-    width: 90%;
+    width: fit-content;
     top: -100%;
 }
-.reminder .setDate{
+
+.DateTime .setDate {
     background-color: #ffffff;
 }
 
-.reminder > .btn> button {
-/* width: 50%; */
-background: #6bebff;
-border-radius: .2rem;
-font-weight: 600;
-margin: 0 .2rem;
-padding: 0 .3rem;
+.DateTime>.btn>button {
+    /* width: 50%; */
+    /* background: #6bebff; */
+    border-radius: .2rem;
+    font-weight: 600;
+    margin: .1rem;
+    padding: 0.3rem;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.323);
+    transition: .5s;
 }
+
+
+
 /* Todo lists cards*/
+
 .todo__list {
     display: flex;
-
     flex-wrap: wrap;
+    /* background: #0f25378b; */
 }
 
 .todo__list>.todo__card {
     width: 22rem;
-    min-height: 30vh;
-    margin: 2rem;
-    background: #054a59;
-    /* background: rgb(234, 233, 253); */
+    min-height: 25vh;
+    margin: 1rem;
+    background: #3a1b32;
+    /* background: #2f2c4e;
+    background: #023642; */
     border-radius: .5rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    /* border: 1px solid #2f2c4e; */
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.323);
     justify-content: space-between;
     transition: 1s;
 
@@ -194,17 +230,23 @@ padding: 0 .3rem;
 .todo__card__content {
     display: flex;
     flex-direction: column;
-    padding: 0 15px;
+    justify-content: start;
+    align-items: center;
+    padding: 15px;
 }
 
 .todo__card__content>h4 {
     font-weight: 900;
     font-size: 1.2rem;
     text-align: center;
-    color: #ffffff;
-    padding: 1rem;
+    color: #79ed2b;
 }
-
+.todo__card__content > hr {
+    width: 100%;
+    background: #ffffffc3;
+    margin: .5rem 0;
+    height: 1px;
+}
 .todo__card__content pre {
     max-width: 100%;
     text-wrap: wrap;
@@ -218,11 +260,12 @@ padding: 0 .3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 2px solid rgb(26, 203, 243);
-    background: rgb(234, 233, 253);
+    border-top: 2px solid #1acbf3;
+    background: #eae9fdf8;
 }
 
 .todo__card__btn>button {
+    border: none;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.323);
     border-radius: .5rem;
     padding: .5rem 1rem;
@@ -234,7 +277,10 @@ padding: 0 .3rem;
     background: #373561;
     color: rgb(255, 255, 255);
 }
-button:disabled{
+.todo__card__btn>button:first-child{
+    cursor: none;
+}
+button:disabled {
     background-color: #ccc;
     color: #666;
     box-shadow: none;

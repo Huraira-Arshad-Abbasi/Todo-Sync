@@ -1,9 +1,7 @@
-import { useContext } from 'react';
-import { AuthContext } from './AuthContext';
-
+import { Link } from 'react-router-dom';
+import '../css/Logout.css';
 function Logout() {
-    const { logout } = useContext(AuthContext);
 
-    return <button className='btn absolute z-10 right-3 shadow-black shadow-sm font-bold text-white rounded p-3  transition-all hover:bg-sky-700' onClick={logout}>Logout</button>;
+    return <button className='Logout__btn' ><Link to= "/register">Logout</Link></button>;
 }
 export default Logout;

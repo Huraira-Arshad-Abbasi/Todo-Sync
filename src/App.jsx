@@ -1,35 +1,19 @@
-import { useContext } from 'react';
-import { AuthContext } from './components/AuthContext';
-import Login from './components/Login';
-// import Logout from './components/Logout';
-import TodoApp from './components/TodoApp';  
+import LandingPage from './components/LandingPage'
+import TodoApp from './components/TodoApp'
+import Auth from './components/Authentication'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-function App() {
-    const { isAuthenticated, loading } = useContext(AuthContext);
-        if (loading) {
-        return <div>Loading...</div>;
-    }
-    return (
-        <div>
-            {/* <>
-            <TodoApp />
-            if (!isAuthenticated) {
-                <Login/>
-            }
-            </> */}
-            {isAuthenticated ? (
-                <>
-                    <TodoApp />
-                </>
-            ) : (
-              <>
-              <TodoApp />
-              <Login />
-          </>
-            )}
-        </div>
-    );
+function App () {
+  const router = createBrowserRouter([
+    {path: '/', element: <LandingPage />},
+    {path: '/register', element: <Auth />},
+    {path: '/todos', element: <TodoApp />},
+  ])
+  return (
+    <> 
+      <RouterProvider router={router} />
+    </>
+  )
 }
 
-export default App;
-
+export default App
