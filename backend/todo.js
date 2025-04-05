@@ -11,7 +11,7 @@ const todoSchema = mongoose.Schema({
       return value || Date.now();  // Set current date if the value is null
     }
   },
-  userId: {type: mongoose.Schema.Types.ObjectId} 
+  email: {type: String, required: true} 
 })
 
 

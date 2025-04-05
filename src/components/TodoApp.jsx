@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-
 import '../css/TodoApp.css';
 import axios from 'axios';
 import { format } from 'date-fns';
@@ -13,15 +12,22 @@ export default function TodoApp() {
   const [disc, setdisc] = useState('');
   const [todos, settodos] = useState([]);
   const [date, changeDate] = useState(new Date());
-
  
   useEffect(() => {
-
+    
     // Fetch todos from the backend
     const fetchTodos = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/todos');
-        settodos(response.data);
+        const email = localStorage.getItem('email');
+        // Get the email from local storage
+        const response = await axios.get(`http://localhost:3000/api/todos/${email}`);
+        if (!response.data) {
+          settodos([]);
+        }else if (response.data.length === 0) {
+          settodos([]);
+        }else{
+          settodos(response.data);
+        }
       } catch (error) {
         console.error('Error fetching todos:', error.message);
       }
@@ -33,10 +39,10 @@ export default function TodoApp() {
 
   // fucntions
   const handleSave = async () => {
-    const todo = { title, disc, date };
+    const todo = { title, disc,date, email: localStorage.getItem('email') };
     try {
       // Save the new todo in the database
-      const response = await axios.post('http://localhost:3000/api/todos', todo);
+      const response = await axios.post(`http://localhost:3000/api/todos`, todo);
       settodos([...todos, response.data]);
       settitle('');
       setdisc('');
@@ -127,7 +133,7 @@ export default function TodoApp() {
         {/* todo list displaying as cards */}
         <div className="todo__list">
           {todos.slice().reverse().map((item, index) => {
-            const formatted = format(new Date(item.date), 'dd-MM-yyyy h:mm a');
+            const formatted = format(new Date(item.date), 'dd-MM-yyyy __h:mm a');
 
             return (
               <div className="todo__card" key={index}>
