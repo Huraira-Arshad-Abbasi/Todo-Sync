@@ -12,7 +12,7 @@
   position: relative;
   box-shadow: 0px 0px 10px 2px black;
   width: 85%;
-  height: 80%;
+  min-height: 80%;
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
@@ -41,12 +41,13 @@ form {
   padding: 0 3rem;
 }
 
-form>h2 {
-  margin: 0.5rem 0;
+form > h2 {
   font-size: 5rem;
   font-family: 'Yeseva One', serif;
   font-weight: 600;
   font-style: normal;
+  margin: 0.5rem 0;
+  text-align: center;
 }
 
 form .inputbox {
@@ -181,4 +182,44 @@ form .Btn button:hover {
   text-align: center;
   font-size: 1.5rem;
   padding: 0 10% 0 20%;
+}
+
+
+ /* media queries */
+@media screen and (max-width: 900px) {
+  .auth__container {
+    background-color: #0c5051;
+  }
+  .auth__inner__container {
+    width: 95%;
+    border-radius: 0%;
+    
+    /* height: 100%; */
+    flex-direction: column-reverse;
+    background: #ffffff;
+  }
+  .auth__inner__container::before {
+    z-index: -1;
+  background: inherit;
+}
+form{
+  width: 100%;
+  padding: 0 1rem;
+
+}
+.right__container{
+  background: #34354a;
+  width: 80%;
+  height: auto;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+.right__container h2{
+  font-size: 4rem;
+}
+.right__container p{
+  /* font-size: small; */
+  font-style: italic;
+  color: #906666;
+}
 }

@@ -1,28 +1,29 @@
 import { Link } from 'react-router-dom';
-import Notification from './Notification'
+// import Notification from './Notification'
 import '../css/LandingPage.css';
 const LandingPage = () => {
     return (
         <div className='main__container'>
-            <Notification />
+            {/* <Notification /> */}
             <nav>
                 <div className="logo">
                     {/* <img width='55rem' src={logo} alt="" /> */}
-                    <div className="name">Sticky Notes</div>
+                    <div className="name">TodoSync</div>
                 </div>
                 <div className="nav__links">
                     
                 </div>
-                <div className="navBtn">
-                    <button className="bg-red-600 rounded-lg border-none font-semibold font-sans px-4 py-2 text-white"><Link to="/register">Start for free</Link></button>
+                <div className="btn navBtn">
+                    <button><Link to="/register">Start for free</Link></button>
                 </div>
             </nav>
             <div className='main'>
                 <div className="container">
                     <h2>Organize your work <br /> and life, finally.</h2>
-                    <p>Become focused, organized, and calm with Todolist. The world{"'"}s #1 <br /> task manager and to-do list app.</p>
+                    <p>Become focused, organized, and calm with Todolist. </p>
+                    <p>A modern task management app that keeps your todos synchronized and accessible, anytime, anywhere.</p>
                     <div className="btn">
-                        <button className="bg-red-600 rounded-lg border-none font-semibold font-sans px-4 py-2 text-white"><Link to="/register">Start for free</Link></button>
+                        <button><Link to="/register">Start for free</Link></button>
                     </div>
                 </div>
                 <div className="img">
@@ -32,7 +33,7 @@ const LandingPage = () => {
                     <h2>Gain calmness and clarity with the <br /> world{"'"}s most beloved productivity app</h2>
                     <p>337000+ ★★★★★ reviews on Google Play and App Store</p>
                     <div className="btn">
-                        <button className="bg-red-600 rounded-lg border-none font-semibold font-sans px-4 py-2 text-white"><Link to="/register">Start for free</Link></button>
+                        <button><Link to="/register">Start for free</Link></button>
                     </div>
                 </div>
             </div>
@@ -42,7 +43,7 @@ const LandingPage = () => {
                         <div className="logo">
                             {/* <img width='55rem' src={logo} alt="" /> */}
                             <div className="name">
-                                Sticky Notes
+                                TodoSync
                             </div>
                         </div>
                         <p><i>Join those who organize work and life with this app.</i></p>

@@ -81,38 +81,13 @@ const Auth = () => {
           console.log(response.data)
         } catch (error) {
           console.error('Error:', error.response?.data || error.message)
+          
         }
         setIsLoginMode(!isLoginMode)
       }
     }
-    // try {
-    //   const url = isLoginMode
-    //     ? 'http://localhost:3000/api/auth/login'
-    //     : 'http://localhost:3000/api/auth/signUp'
-    //   const response = await axios.post(url, FormData)
-    //   console.log(response.data)
-
-    //   // Redirect to the todos page after successful login/signup
-    //   if (isLoginMode) {
-    //     navigate('/todos')
-    //   } else {
-    //     setIsLoginMode(!isLoginMode)
-    //   }
-    // } catch (error) {
-    //   console.error('Error:', error.response?.data || error.message)
-    // }
-    // setIsLoginMode(!isLoginMode)
   }
 
-  // const handleCurrentSatuation = async () => {
-
-  //   // just route to the todos page
-  //   if (isLoginMode) {
-  //     navigate('/todos')
-  //   }
-
-  //   setIsLoginMode(!isLoginMode)
-  // }
   return (
     <div className='auth__container'>
       <Notification />

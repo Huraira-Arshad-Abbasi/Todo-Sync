@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import '../css/TodoApp.css';
 import axios from 'axios';
 import { format } from 'date-fns';
-import Notification from './Notification'
+// import Notification from './Notification'
 import Logout from './Logout';
 
 
@@ -94,7 +94,7 @@ export default function TodoApp() {
   return (
     <>
       <div className='main__div'>
-        <Notification />
+        {/* <Notification /> */}
         <nav>
           <h2>Your Todos</h2>
           <Logout />

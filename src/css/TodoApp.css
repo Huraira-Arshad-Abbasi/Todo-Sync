@@ -207,6 +207,7 @@ nav>h2 {
 .todo__list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: stretch;
     /* background: #0f25378b; */
 }
 
@@ -293,4 +294,15 @@ button:disabled {
     box-shadow: none;
     cursor: not-allowed;
     opacity: 0.6;
+}
+
+/* media queries */
+@media screen and (max-width: 900px){
+    
+.todo__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background: #0f25378b; */
+}
 }

@@ -3,7 +3,7 @@ nav {
     align-items: center;
     max-width: 100%;
     padding: 1rem;
-    background: #3a1b32;
+    background: #25292c;
     margin: 0 auto;
 }
 
@@ -18,16 +18,18 @@ nav>.logo>.name {
     font-size: 2rem;
     font-family: Impact sans-serif;
     font-weight: bold;
-    color: #ffffff;
+    color: #ee756d;
 }
 
 nav .navBtn {
     margin-left: auto;
 }
 
-nav button,
+
 .btn>button {
     background-color: #dc2626;
+    background-color: #25292c;
+    box-shadow: #b0bcc492 0px 0px 0px 1px;
     border-radius: 0.5rem;
     border: none;
     font-weight: 600;
@@ -43,6 +45,8 @@ nav button > a,
 nav button:hover,
 .btn>button:hover{
     background-color: #ee756d;
+    background-color: #2d3337;
+    box-shadow: #ee756d 0px 0px 0px 1px;
     padding: 0.5rem 1.3rem;
 }
 /* .................... */
@@ -53,7 +57,7 @@ nav button:hover,
 .main>.container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     height: 70vh;
     max-width: 100%;
@@ -66,16 +70,23 @@ nav button:hover,
     text-align: center;
     font-weight: 600;
     font-size: 60px;
+    color: #486583;
 
 }
 
 .container>p {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: rgba(37, 34, 30, 0.7);
 
 }
-
+.container>p:nth-child(2) {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    font-weight: 600;
+    font-style: italic;
+    color: #111c7d;
+}
 .btn {
     margin: 1rem;
 }
