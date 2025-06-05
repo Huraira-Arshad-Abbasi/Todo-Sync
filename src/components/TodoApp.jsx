@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+// import { useParams } from 'react-router-dom';
 import '../css/TodoApp.css';
 import axios from 'axios';
 import { format } from 'date-fns';
@@ -12,14 +13,14 @@ export default function TodoApp() {
   const [disc, setdisc] = useState('');
   const [todos, settodos] = useState([]);
   const [date, changeDate] = useState(new Date());
- 
+  // const { email } = useParams();
+
   useEffect(() => {
-    
     // Fetch todos from the backend
     const fetchTodos = async () => {
       try {
         const email = localStorage.getItem('email');
-        // Get the email from local storage
+        // // Get the email from local storage
         const response = await axios.get(`http://localhost:3000/api/todos/${email}`);
         if (!response.data) {
           settodos([]);

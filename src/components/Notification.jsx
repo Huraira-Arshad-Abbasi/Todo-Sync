@@ -8,7 +8,7 @@ function Notification() {
     }
   return (
     <div className={`notification ${show ? '' : 'disabled'}`}>
-        <p>This Web appication is under production!
+        <p>This Web appication is under develpment!
         </p>
       <a onClick={handleClose}>&times;</a>
     </div>

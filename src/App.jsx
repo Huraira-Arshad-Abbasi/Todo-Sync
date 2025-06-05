@@ -2,9 +2,9 @@ import LandingPage from './components/LandingPage'
 import TodoApp from './components/TodoApp'
 import Auth from './components/Authentication'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import PageNotFound from './components/PageNotFound';
 
-let email = localStorage.getItem('email')
-console.log(email);
+let email = localStorage.getItem('email');
 function App () {
   
   if (!email) {
@@ -15,6 +15,7 @@ function App () {
     {path: '/', element: <LandingPage />},
     {path: '/register', element: <Auth />},
     {path: `/todos/${email}`, element: <TodoApp />},
+    {path: '*', element: <PageNotFound/>}, // Catch-all route
   ])
   return (
     <> 

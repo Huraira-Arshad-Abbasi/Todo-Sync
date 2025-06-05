@@ -1,0 +1,49 @@
+/* PageNotFound.css */
+
+.pageNfound-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    height: 100vh;
+    background: #121212;
+    /* color: #267ba3; */
+    text-align: center;
+
+}
+
+.pageNfound-container h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color: #bdd3df;
+}
+
+.pageNfound-container p {
+    font-size: 1rem;
+    max-width: 400px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0.5rem auto;
+    color: #bbbbbb;
+}
+
+
+.button-group>button {
+    background: transparent;
+    box-shadow: 0 0 5px 0px #267ca399;
+    color: #92a8af;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.button-group> button:hover {
+   background: #0d053576;
+    border:  1px solid #ee756d;
+    padding: 0.5rem 1.3rem;
+}

@@ -59,9 +59,11 @@ nav button:hover,
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    height: 70vh;
+    /* height: 70vh; */
+    
     max-width: 100%;
     margin: 0 auto;
+    margin-top: 25vh;
     font-family: sans-serif;
     overflow: hidden;
 }
@@ -69,8 +71,9 @@ nav button:hover,
 .container>h2 {
     text-align: center;
     font-weight: 600;
-    font-size: 60px;
+    font-size: 70px;
     color: #486583;
+
 
 }
 

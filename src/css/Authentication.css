@@ -193,8 +193,6 @@ form .Btn button:hover {
   .auth__inner__container {
     width: 95%;
     border-radius: 0%;
-    
-    /* height: 100%; */
     flex-direction: column-reverse;
     background: #ffffff;
   }
@@ -204,21 +202,23 @@ form .Btn button:hover {
 }
 form{
   width: 100%;
-  padding: 0 1rem;
+  margin: 2vw auto;
+  padding: 1rem;
 
 }
 .right__container{
   background: #34354a;
   width: 80%;
   height: auto;
+  margin: 1vw auto;
   padding: 1rem 2rem;
   border-radius: 10px;
 }
 .right__container h2{
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .right__container p{
-  /* font-size: small; */
+  font-size: small;
   font-style: italic;
   color: #906666;
 }

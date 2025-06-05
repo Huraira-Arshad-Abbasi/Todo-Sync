@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import Notification from './Notification'
 import '../css/Authentication.css'
 const Auth = () => {
   const [isLoginMode, setIsLoginMode] = useState(false)
@@ -34,9 +33,8 @@ const Auth = () => {
           FormData
         )
         console.log(response.data)
-        console.log('Login successful!')
         localStorage.setItem('email', FormData.email)
-        const localEmail = localStorage.getItem('email')
+        const localEmail = await localStorage.getItem('email')
         if (!localEmail) {
           alert('Please log in again!') 
           return
@@ -73,6 +71,7 @@ const Auth = () => {
           email: email,
           password: password
         }
+        
         try {
           const response = await axios.post(
             'http://localhost:3000/api/auth/signUp',
@@ -90,7 +89,6 @@ const Auth = () => {
 
   return (
     <div className='auth__container'>
-      <Notification />
       <div className='auth__inner__container'>
         <form action=''>
           <h2>{isLoginMode ? 'Log In' : 'Sign Up'}</h2>
@@ -172,7 +170,6 @@ const Auth = () => {
             </button>
           </div>
         </form>
-
         <div className='right__container'>
           <h2>Welcome!</h2>
           <p>
