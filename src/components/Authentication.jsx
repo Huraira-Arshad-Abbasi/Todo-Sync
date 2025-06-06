@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import '../css/Authentication.css'
 const Auth = () => {
-  const [isLoginMode, setIsLoginMode] = useState(false)
+  const [isLoginMode, setIsLoginMode] = useState(true)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,14 +32,13 @@ const Auth = () => {
           'http://localhost:3000/api/auth/logIn',
           FormData
         )
-        console.log(response.data)
-        localStorage.setItem('email', FormData.email)
-        const localEmail = await localStorage.getItem('email')
-        if (!localEmail) {
+        localStorage.setItem('token', response.data)
+        const Token = localStorage.getItem('token')
+        if (!Token) {
           alert('Please log in again!') 
           return
         }else{
-          navigate(`/todos/${localEmail}`) 
+          navigate(`/todos`) 
         }
         // same email in localstorage
       } catch (error) {

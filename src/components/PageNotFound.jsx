@@ -15,9 +15,7 @@ function PageNotFound() {
       <p>
         Oops! The page you{"'"}re looking for doesn{"'"}t exist. 
       </p>
-      <p>
-        If you just logged in and see this message, please reload the page to fix the issue.
-      </p>
+     
       <div className="button-group">
         <button  onClick={handleReload}>
           Reload Page
@@ -26,7 +24,7 @@ function PageNotFound() {
           Go to home Page
         </button>
         <button  onClick={() => navigate('/register')}>
-          Go to SignUp Page
+          Go to Log In Page
         </button>
       </div>
     </div>

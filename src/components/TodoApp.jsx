@@ -19,9 +19,13 @@ export default function TodoApp() {
     // Fetch todos from the backend
     const fetchTodos = async () => {
       try {
-        const email = localStorage.getItem('email');
+        // const email = localStorage.getItem('email');
         // // Get the email from local storage
-        const response = await axios.get(`http://localhost:3000/api/todos/${email}`);
+        const response = await axios.get(`http://localhost:3000/api/todos`,{
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`, // Send token in Authorization header
+          },
+        });
         if (!response.data) {
           settodos([]);
         }else if (response.data.length === 0) {
@@ -40,10 +44,15 @@ export default function TodoApp() {
 
   // fucntions
   const handleSave = async () => {
-    const todo = { title, disc,date, email: localStorage.getItem('email') };
+    const token = localStorage.getItem('token');
+    const todo = { title, disc,date };  
     try {
       // Save the new todo in the database
-      const response = await axios.post(`http://localhost:3000/api/todos`, todo);
+      const response = await axios.post(`http://localhost:3000/api/addTodo`, todo,{
+      headers: {
+        Authorization: `Bearer ${token}`, // Send token in Authorization header
+      },
+    } );
       settodos([...todos, response.data]);
       settitle('');
       setdisc('');

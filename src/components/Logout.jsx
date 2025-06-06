@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../css/Logout.css';
 const handleLogout = () => {
-    localStorage.removeItem('email');
+    localStorage.removeItem('token');
 };
 function Logout() {
 
