@@ -79,7 +79,6 @@ const Auth = () => {
           console.log(response.data)
         } catch (error) {
           console.error('Error:', error.response?.data || error.message)
-          
         }
         setIsLoginMode(!isLoginMode)
       }
@@ -107,6 +106,7 @@ const Auth = () => {
               <i></i>
             </div>
           )}
+          
           <div className='inputbox'>
             <input
               type='email'

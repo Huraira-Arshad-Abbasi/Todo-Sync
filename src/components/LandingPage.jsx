@@ -14,7 +14,7 @@ const LandingPage = () => {
                     
                 </div>
                 <div className="btn navBtn">
-                    <button><Link to="/register">Start for free</Link></button>
+                    <button><Link to="/register">Start Now</Link></button>
                 </div>
             </nav>
             <div className='main'>
@@ -23,7 +23,7 @@ const LandingPage = () => {
                     <p>Become focused, organized, and calm with Todolist. </p>
                     <p>A modern task management app that keeps your todos synchronized and accessible, anytime, anywhere.</p>
                     <div className="btn">
-                        <button><Link to="/register">Start for free</Link></button>
+                        <button><Link to="/register">Start Now</Link></button>
                     </div>
                 </div>
                 <div className="img">
@@ -33,7 +33,7 @@ const LandingPage = () => {
                     <h2>Gain calmness and clarity with the <br /> world{"'"}s most beloved productivity app</h2>
                     <p>337000+ ★★★★★ reviews on Google Play and App Store</p>
                     <div className="btn">
-                        <button><Link to="/register">Start for free</Link></button>
+                        <button><Link to="/register">Start Now</Link></button>
                     </div>
                 </div>
             </div>
