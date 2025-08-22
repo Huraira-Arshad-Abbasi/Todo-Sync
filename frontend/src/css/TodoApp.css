@@ -199,16 +199,43 @@ nav>h2 {
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.323);
     transition: .5s;
 }
+/* Controls */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin: 1rem 0;
+  width: 70%;
+  flex-wrap: wrap; /* allows stacking on small screens */
+}
 
+.controls > .select-row{
+    display: flex;
+    width: 40%;
+    gap: 10px;
+}
+.controls input,
+.controls select {
+  flex: 1; /* each item grows equally */
+  min-width: 150px; /* prevent too small on mobile */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
 
+.controls input:focus,
+.controls select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
 
 /* Todo lists cards*/
 
 .todo__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: stretch;
-    /* background: #0f25378b; */
+    justify-content: center;
 }
 
 .todo__list>.todo__card {
@@ -219,16 +246,56 @@ nav>h2 {
     /* background: #2f2c4e;
     background: #023642; */
     border-radius: .5rem;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     flex-direction: column;
     /* border: 1px solid #2f2c4e; */
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.323);
     justify-content: space-between;
-    
+    position: relative;
     transition: 1s;
 
 }
+
+.todo__card > .status{
+    position: absolute;
+    top: -5%;
+    right: -3%;
+    /* border: 2px solid red; */
+}
+.status {
+  position: absolute;   /* Place it at the corner */
+  top: 10px;
+  right: 10px;
+}
+
+.status select {
+  border-radius: 20px;
+  background: #0c2435;
+  padding: 0.4rem 1rem;
+  color: #35d77b;
+  border: 1px solid #98f5c1;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;      /* Remove default arrow */
+  transition: all 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Hover and focus effects */
+.status select:hover,
+.status select:focus {
+  background-color: #132f45;
+  border-color: #4af58e;
+  color: #4af58e;
+  box-shadow: 0 0 8px rgba(53, 215, 123, 0.4);
+}
+
+
+
 
 .todo__card__content {
     display: flex;
@@ -303,6 +370,16 @@ button:disabled {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    
     /* background: #0f25378b; */
+}
+
+.controls{
+    flex-direction: column;
+    width: 100%;
+}
+.controls > .select-row{
+    width: 100%;
 }
 }

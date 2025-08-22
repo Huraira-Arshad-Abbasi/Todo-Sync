@@ -20,7 +20,7 @@ const LandingPage = () => {
             <div className='main'>
                 <div className="container">
                     <h2>Organize your work <br /> and life, finally.</h2>
-                    <p>Become focused, organized, and calm with Todolist. </p>
+                    <p>Become focused, organized, and calm with TodoSync. </p>
                     <p>A modern task management app that keeps your todos synchronized and accessible, anytime, anywhere.</p>
                     <div className="btn">
                         <button><Link to="/register">Start Now</Link></button>

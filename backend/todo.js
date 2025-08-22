@@ -11,7 +11,11 @@ const todoSchema = mongoose.Schema({
       return value || Date.now();  // Set current date if the value is null
     }
   },
-  email: {type: String, required: true} 
+  status: {
+    type: String,
+    default: 'pending'
+  },
+  email: { type: String, required: true }
 })
 
 
