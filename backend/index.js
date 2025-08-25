@@ -5,11 +5,15 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config(); // Ensure dotenv is configured before using process.env
+import connectDB from './db.js'; // Import the database connection
 import { Todo } from './todo.js';
 import { User } from './user.js';
 const router = express();
 router.use(cors()); // To allow cross-origin requests from React frontend
 router.use(bodyParser.json()); // To parse JSON request bodies
+
+// Connect DB
+connectDB();
 
 // Variables from .env
 const PORT = process.env.PORT || 3000;

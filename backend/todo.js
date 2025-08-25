@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
-mongoose.connect(`mongodb://127.0.0.1:27017/Todos`)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('Database connection error:', err.message));
 
+// Define Todo schema
 const todoSchema = mongoose.Schema({
   title: { type: String },
   disc: { type: String },
@@ -19,4 +17,4 @@ const todoSchema = mongoose.Schema({
 })
 
 
-export const Todo = mongoose.model('Todo', todoSchema);
+export const Todo = mongoose.model('Todo', todoSchema); 
