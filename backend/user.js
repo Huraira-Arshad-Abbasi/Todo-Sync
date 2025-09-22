@@ -8,3 +8,4 @@ const UserSchema = new mongoose.Schema({
 
 export const User = mongoose.model('User', UserSchema);
 
+// mongodb+srv://hurairaabbasi647:8JXIlfeDPJ29MZBo@todoappcluster.tdbezdp.mongodb.net/?retryWrites=true&w=majority&appName=TodoAppCluster
