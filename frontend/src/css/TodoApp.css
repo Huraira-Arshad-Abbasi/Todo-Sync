@@ -10,8 +10,8 @@ button {
     position: relative;
     margin: 0 auto;
     overflow-x: hidden;
-    /* background: #c2d8a9;
-    background: #1a1515; */
+    background: #c2d8a9;
+    background: linear-gradient(0deg, #3a1b327f , #ffffff );
 }
 
 nav {
@@ -191,7 +191,7 @@ nav>h2 {
 
 .DateTime>.btn>button {
     /* width: 50%; */
-    /* background: #6bebff; */
+    background: #ffffff;
     border-radius: .2rem;
     font-weight: 600;
     margin: .1rem;
